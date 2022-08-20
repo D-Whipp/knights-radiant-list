@@ -1,29 +1,56 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="./styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Javascript Sandbox</title>
-</head>
-<body>
-    <h1 id="title">Javascript Sandbox</h1>
-    <form class="new-contact">
-        <div>
-            <label for="firstName">Enter your first name:</label>
-            <input id="firstName" type="text" required>
-        </div>
-        <div>
-            <label for="lastName">Enter your first name:</label>
-            <input id="lastName" type="text" required>
-        </div>
-        <button id="addName">New contact</button>
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- local styles -->
+    <link rel="stylesheet" href="./assets/css/reset.css" />
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+    <!-- local script -->
+    <script defer src="./assets/js/app.js"></script>
+  </head>
+  <body>
+    <h1 id="title">
+      *
+      <span class="kholin-blue">K</span>nights
+      <span class="kholin-blue">R</span>adiant
+      <span class="kholin-blue">L</span>ist *
+    </h1>
+    <form class="new-radiant">
+      <div>
+        <label for="firstName" class="radiant-gold"
+          >Enter <span class="kholin-blue">K</span>nights
+          <span class="kholin-blue">R</span>adiant's first
+          name:</label
+        >
+        <input id="firstName" type="text" required />
+      </div>
+      <div>
+        <label for="lastName" class="radiant-gold"
+          >Enter <span class="kholin-blue">K</span>nights
+          <span class="kholin-blue">R</span>adiant's last name:</label
+        >
+        <input id="lastName" type="text" required />
+      </div>
+      <button id="addName">Add Radiant</button>
     </form>
-    <section class="contacts">
-        <ul>
-
-        </ul>
+    <section class="radiants">
+      <ul></ul>
     </section>
-    <script src="app.js"></script>
-</body>
+  </body>
 </html>

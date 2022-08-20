@@ -5,7 +5,7 @@ const form = document.querySelector('form');
 const list = document.querySelector('ul');
 
 window.onload = () => {
-  let request = window.indexedDB.open('contacts', 1);
+  let request = window.indexedDB.open('radiants', 1);
 
   request.onerror = function () {
     console.log('Database failed to open');
@@ -21,7 +21,7 @@ window.onload = () => {
   request.onupgradeneeded = function (e) {
     let db = e.target.result;
 
-    let objectStore = db.createObjectStore('contacts', {
+    let objectStore = db.createObjectStore('radiants', {
       keyPath: 'id',
       autoIncrement: true,
     });
@@ -46,8 +46,8 @@ window.onload = () => {
       lastName: lastNameInput.value,
     };
 
-    let transaction = db.transaction(['contacts'], 'readwrite');
-    let objectStore = transaction.objectStore('contacts');
+    let transaction = db.transaction(['radiants'], 'readwrite');
+    let objectStore = transaction.objectStore('radiants');
     let request = objectStore.add(newItem);
 
     request.onsuccess = () => {
@@ -71,8 +71,8 @@ window.onload = () => {
     }
 
     let objectStore = db
-      .transaction('contacts')
-      .objectStore('contacts');
+      .transaction('radiants')
+      .objectStore('radiants');
     objectStore.openCursor().onsuccess = function (e) {
       let cursor = e.target.result;
 
@@ -88,7 +88,7 @@ window.onload = () => {
         first.textContent = cursor.value.firstName;
         last.textContent = cursor.value.lastName;
 
-        listItem.setAttribute('data-contact-id', cursor.value.id);
+        listItem.setAttribute('data-radiant-id', cursor.value.id);
 
         let deleteButton = document.createElement('button');
         listItem.appendChild(deleteButton);
@@ -100,31 +100,31 @@ window.onload = () => {
       } else {
         if (!list.firstChild) {
           let listItem = document.createElement('li');
-          listItem.textContent = 'No contacts store.';
+          listItem.textContent = 'No Radiants enlisted.';
           list.appendChild(listItem);
         }
       }
-      console.log('Contacts displayed!!!');
+      console.log('radiants displayed!!!');
     };
   }
 
   function deleteItem(e) {
-    let contactId = Number(
-      e.target.parentNode.getAttribute('data-contact-id')
+    let radiantId = Number(
+      e.target.parentNode.getAttribute('data-radiant-id')
     );
 
-    let transaction = db.transaction(['contacts'], 'readwrite');
-    let objectStore = transaction.objectStore('contacts');
-    let request = objectStore.delete(contactId);
+    let transaction = db.transaction(['radiants'], 'readwrite');
+    let objectStore = transaction.objectStore('radiants');
+    let request = objectStore.delete(radiantId);
 
     transaction.oncomplete = () => {
       e.target.parentNode.parentNode.removeChild(e.target.parentNode);
 
-      console.log(`Contact ${contactId} is deleted`);
+      console.log(`radiant ${radiantId} is deleted`);
 
       if (!list.firstChild) {
         let listItem = document.createElement('li');
-        listItem.textContent = 'No contacts store.';
+        listItem.textContent = 'No radiants store.';
         list.appendChild(listItem);
       }
     };

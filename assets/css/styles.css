@@ -1,0 +1,137 @@
+/* ******************** */
+/* Knights Radiant Colors */
+/* ******************** */
+/* #2c3260 */
+/* #f3f4fb */
+/* #8a8864 */
+
+/* ******************** */
+/* general */
+/* ******************** */
+html {
+  font-family: sans-serif;
+}
+
+body {
+  font-family: 'Tangerine', cursive;
+  margin: 0 auto;
+  max-width: 800px;
+  /* text-align: center; */
+}
+
+div {
+  margin-bottom: 10px;
+}
+
+/* ******************** */
+/* misc */
+/* ******************** */
+.kholin-blue {
+  color: #2c3260;
+}
+
+.radiant-gold {
+  color: #8a8864;
+}
+
+.knights-white {
+  color: #f3f4fb;
+}
+
+/* ******************** */
+/* heading */
+/* ******************** */
+body h1 {
+  text-align: center;
+}
+
+h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin: 2rem auto;
+}
+
+/* ******************** */
+/* form */
+/* ******************** */
+form {
+  position: relative;
+}
+form div label {
+  font-size: 2rem;
+  margin-right: 1rem;
+}
+
+form div input {
+  border: 0.15rem solid #2c3260;
+  border-radius: 0.25rem;
+  height: 2rem;
+  text-align: center;
+}
+
+body form button {
+  justify-content: center;
+}
+
+form button {
+  /* margin: 10 0 10 0; */
+  /* margin: 1rem auto; */
+  background-color: #8a8864;
+  border: 0.2rem solid #2c3260;
+  border-radius: 0.5rem;
+  color: #f3f4fb;
+  font-weight: 700;
+  padding: 0.5rem 1rem;
+  position: absolute;
+  right: 1.5rem;
+  /* margin: 1rem; */
+}
+
+/* ******************** */
+/* list */
+/* ******************** */
+.new-radiant, .radiants {
+  border-radius: 0.5rem;
+  margin-top: 2rem;
+  padding: 20px;
+}
+
+/* .radiants {
+  background-color: #8a8864;
+} */
+
+.new-radiant {
+  background: #f3f4fb;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  /* border-bottom: 1px solid #2c3260; */
+  /* background-color: #8a8864; */
+  background: linear-gradient(0.25turn, #f3f4fb, #8a8864, #2c3260);
+  border-radius: 0.25rem;
+  border: 1px solid #2c3260;
+  /* color: #8a8864; */
+  font-size: 1.75rem;
+  /* font-weight: 600; */
+  margin: 1rem 0;
+  padding: 2rem;
+  display: flex;
+}
+
+li p {
+  /* font-weight: bold; */
+  background-image: linear-gradient(90deg, #2c3260, #f3f4fb);
+  background-clip: text;
+  color: transparent;
+  /* font-weight: 900; */
+  margin: 0 2.5rem;
+  padding: 0.5rem 1rem;
+}
+
+/* li:last-child {
+  border: none;
+} */
