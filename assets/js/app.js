@@ -1,6 +1,8 @@
 let db;
 const firstNameInput = document.querySelector('#firstName');
 const lastNameInput = document.querySelector('#lastName');
+// order
+const orderInput = document.querySelector('#order');
 const form = document.querySelector('form');
 const list = document.querySelector('ul');
 
@@ -32,6 +34,10 @@ window.onload = () => {
     objectStore.createIndex('lastName', 'lastName', {
       unique: false,
     });
+    // order
+    objectStore.createIndex('order', 'order', {
+      unique: false,
+    });
 
     console.log('Database setup complete');
   };
@@ -44,6 +50,8 @@ window.onload = () => {
     let newItem = {
       firstName: firstNameInput.value,
       lastName: lastNameInput.value,
+      // order
+      order: orderInput.value,
     };
 
     let transaction = db.transaction(['radiants'], 'readwrite');
@@ -53,6 +61,7 @@ window.onload = () => {
     request.onsuccess = () => {
       firstNameInput.value = '';
       lastNameInput.value = '';
+      orderInput.value = '';
     };
 
     transaction.oncomplete = () => {
@@ -80,13 +89,16 @@ window.onload = () => {
         let listItem = document.createElement('li');
         let first = document.createElement('p');
         let last = document.createElement('p');
+        let order = document.createElement('p');
 
         listItem.appendChild(first);
         listItem.appendChild(last);
+        listItem.appendChild(order);
         list.appendChild(listItem);
 
         first.textContent = cursor.value.firstName;
         last.textContent = cursor.value.lastName;
+        order.textContent = cursor.value.order;
 
         listItem.setAttribute('data-radiant-id', cursor.value.id);
 
