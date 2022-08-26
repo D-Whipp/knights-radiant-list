@@ -58,7 +58,8 @@ form {
   position: relative;
 }
 form div label {
-  font-size: 3rem;
+  font-size: 2.75rem;
+  margin-right: 0.5rem;
 }
 
 form div input {
